@@ -1,6 +1,10 @@
 #include <stdio.h>
 
-main() {
+float celsius_to_far(float celsius){
+    return (9.0/5.0) * (celsius + 32);
+}
+
+int main() {
     float fahr, celsius;
     float lower, upper, step;
     lower = -20;
@@ -10,8 +14,9 @@ main() {
     celsius = lower;
     printf("Celsius\t\tFahrenheit\n");
     while(celsius <= upper) {
-        fahr = (9.0/5.0) * (celsius + 32);
-        printf("%6.1f\t\t%3.0f\n", celsius, fahr);
+        printf("%3.0f\t\t%6.1f\n", celsius, celsius_to_far(celsius));
         celsius = celsius + step;
     }
+
+    return 0;
 }
